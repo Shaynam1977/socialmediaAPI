@@ -69,7 +69,7 @@ module.exports = {
       .catch((err) => res.status(500).json(err));
   },
  
-  removeAssignment(req, res) {
+  unFriend(req, res) {
     User.findOneAndUpdate(
       { _id: req.params.userId },
       { $pull: { friends: { friendId: req.params.friendId } } },
